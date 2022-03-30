@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>ブログTOP on ktzwのエンジニアブログ</title><link>https://kitazawa-yoshitaka.github.io/tech-blog/posts/</link><description>Recent content in ブログTOP on ktzwのエンジニアブログ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><copyright>©2022, All Rights Reserved</copyright><lastBuildDate>Sun, 27 Mar 2022 23:20:00 +0900</lastBuildDate><atom:link href="https://kitazawa-yoshitaka.github.io/tech-blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>My First Post</title><link>https://kitazawa-yoshitaka.github.io/tech-blog/posts/first-post/</link><pubDate>Sun, 27 Mar 2022 23:20:00 +0900</pubDate><atom:modified>Sun, 27 Mar 2022 23:20:00 +0900</atom:modified><guid>https://kitazawa-yoshitaka.github.io/tech-blog/posts/first-post/</guid><description>test</description><dc:creator>ktzw</dc:creator></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>posts on ktzwのエンジニアブログ</title><link>https://kitazawa-yoshitaka.github.io/tech-blog/posts/</link><description>Recent content in posts on ktzwのエンジニアブログ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><copyright>©2022, All Rights Reserved</copyright><lastBuildDate>Sun, 27 Mar 2022 23:20:00 +0900</lastBuildDate><atom:link href="https://kitazawa-yoshitaka.github.io/tech-blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>RESTfulAPIにおける冪等性の担保</title><link>https://kitazawa-yoshitaka.github.io/tech-blog/posts/idempotent-api/</link><pubDate>Thu, 31 Mar 2022 00:45:00 +0900</pubDate><atom:modified>Thu, 31 Mar 2022 00:45:00 +0900</atom:modified><guid>https://kitazawa-yoshitaka.github.io/tech-blog/posts/idempotent-api/</guid><description>はじめに 冪等性についてご存知でしょうか。
+最近RESTfulAPIの設計を行うことがあり、色々と調べて知見を得たので記事にまとめました。
+この記事では冪等性についての説明から、RESTfulAPIでの具体的な冪等性の設計手法を説明します。
+読んだ方のAPI設計の悩みが1つでも解消できれば幸いです。
+想定読者 この記事はRESTfulAPIの設計や実装に関わっているが冪等性について詳しくない人を対象にしています。
+この記事を呼んで &amp;ldquo;冪等性を完全に理解した（※1）&amp;rdquo; 状態になることを目指して書きました。
+冪（べき）等性とは 冪（べき）等性とは同じ操作を何回繰り返しても同じ結果が得られるということを言います。
+例えばテレビのリモコンの&amp;quot;1&amp;quot;ボタンは冪等性があると言えます。
+&amp;ldquo;1&amp;quot;を押すと1チャンネルに切り替わりますが、その時点でもう一度&amp;quot;1&amp;quot;ボタンを押しても1チャンネルのままです。つまり、&amp;ldquo;1&amp;quot;ボタンを何度押しても&amp;quot;1チャンネルを表示する&amp;quot;という結果は変わらないので冪等と言えます。
+逆に冪等性が無い状態というのは、同じ操作を繰り返した際に結果が異なる場合を言います。
+例えばテレビのリモコンの電源ボタンは冪等性がありません。
+テレビがついていない状態で電源ボタンを押すとテレビが付きますが、もう一度押すと今度は消えてしまいます。同じ操作を繰り返し行った際に結果が異なるので冪等とは言えません。
+RESTfulAPIにおける冪等性 RESTfulAPIにおける冪等性は、何度APIを呼び出しても結果が常に同じ（リソースの状態が変わらない）ことを言います。
+Idempontent REST APIsによると、REST原則に従って設計すれば、HTTPメソッドよって冪等性があるか、そうでないかを分類することができます。
+POST は冪等ではありません。 GET, PUT, DELETE, HEAD, OPTIONS, TRACE は冪等です。
+POSTは通常新しいリソースを作成するために使用します。
+POSTリクエストを同じ内容で10回呼び出せば、10個のリソースが作成されることになります。よって、POSTには冪等性がありません。
+GET, HEAD, OPTIONS, TRACE はリソースを取得する処理なので、リソースの更新を一切行わないことから冪等といえます。
+PUT, DELETEはリソースの更新を行いますが、何度同じリクエストを送っても更新結果は変わりません。なので、こちらも冪等といえます。
+この記事にはPATCHについて言及されていませんが、APIの実装により冪等である場合もあるし、冪等でない場合もあることだと私は認識しています。
+いずれせよ、PATCHの場合もPOSTと同じように後述する冪等性を担保する設計を行えば冪等性を担保することができます。
+なぜ冪等性が必要なのか インターネットを経由した通信では、しばしば途中で通信エラーが発生してレスポンスが受け取れないケースが発生することがあります。
+レスポンスが受け取れない場合、送ったリクエストが正しく処理されたか判断できないため、リトライ処理を行う必要があります。
+冪等性の無いAPI（例えばPOSTメソッド）の場合、何も考えずにリクエストを送り直すとリソースが重複して登録されてしまう可能性があります。
+その場合、サーバー側のリソースの状況を取得するAPIを呼び出すなど再度リクエストを送って問題ないかチェックしてからリトライを行う必要があり、通信エラー発生時のリトライ処理が煩雑になってしまいます。
+冪等性のあるAPIの場合は改めてリクエストを送り直すだけでこの問題を解決することができます。
+また、通信エラー以外にも一時的なエラーの場合は同様にリトライ処理で解決することができます。
+冪等性のあるAPIを設計する 冪等性が無いとされているPOSTメソッドで冪等性を担保するための方法を説明します。
+冪等性を担保するために呼び出し元から &amp;ldquo;冪等性キー&amp;rdquo; をリクエストに渡します。
+APIを提供するサーバー側では &amp;ldquo;冪等性キー&amp;rdquo; を受け取り、冪等性キーの値が既に処理済みであるかチェックを行います。
+これまで処理したことの無い &amp;ldquo;冪等性キー&amp;rdquo; であれば、リソース作成処理を行い、処理済みの &amp;ldquo;冪等性キー&amp;rdquo; としてストレージに登録します。
+処理済みの &amp;ldquo;冪等性キー&amp;rdquo; であれば、リソース作成処理を行わずに終了します。
+このような実装にすることで、同じ &amp;ldquo;冪等性キー&amp;rdquo; で何度呼び出しても1つのリソースしか作成されなくなり、冪等であると言える状態を作ることができます。</description><dc:creator>ktzw</dc:creator><category>RESTfulAPI</category><category>設計</category><category>サーバーサイド</category></item></channel></rss>

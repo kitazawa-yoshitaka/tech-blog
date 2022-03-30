@@ -1,1 +1,1 @@
-[{"description":"This is my awesome post!","id":0,"section":"posts","tags":null,"title":"My First Post","uri":"https://kitazawa-yoshitaka.github.io/tech-blog/posts/first-post/"}]
+[{"description":"冪等性についての説明から、RESTfulAPIでの具体的な冪等性の設計手法を説明します。","id":0,"section":"posts","tags":["RESTfulAPI","設計","サーバーサイド"],"title":"RESTfulAPIにおける冪等性の担保","uri":"https://kitazawa-yoshitaka.github.io/tech-blog/posts/idempotent-api/"}]
