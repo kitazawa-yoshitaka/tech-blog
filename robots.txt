@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /blog/
+Sitemap: https://kitazawa-yoshitaka.github.io/tech-blog/sitemap.xml
