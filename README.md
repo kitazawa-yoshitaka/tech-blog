@@ -2,7 +2,7 @@
 ktzwのエンジニアブログのリポジトリです。
 
 ## 公開用URL
-https://kitazawa-yoshitaka.github.io/tech-blog/
+https://y-ktzw.com/tech-blog/
 
 ## ローカル環境構築
 `$ hugo server`
