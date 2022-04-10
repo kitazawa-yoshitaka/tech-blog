@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /categories/
 Disallow: /tags/
 Disallow: /blog/
-Sitemap: https://y-ktzw.com/tech-blog/sitemap.xml
+Sitemap: https://y-ktzw.com/sitemap.xml

@@ -1,4 +1,4 @@
-baseURL = "https://kitazawa-yoshitaka.github.io/tech-blog/" # The URL of your site.
+baseURL = "https://y-ktzw.com" # The URL of your site.
 title = "ktzwのエンジニアブログ" # Title of your site
 theme = "zzo" # Name of Zzo theme folder in `themes/`.
 
