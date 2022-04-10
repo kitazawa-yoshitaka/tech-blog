@@ -6,6 +6,7 @@ tags:
   - RESTfulAPI
   - 設計
   - サーバーサイド
+meta_image: images/card/idempotent-api.png
 ---
 
 ## はじめに
