@@ -30,4 +30,4 @@ PUT, DELETEはリソースの更新を行いますが、何度同じリクエス
 APIを提供するサーバー側では &amp;ldquo;冪等性キー&amp;rdquo; を受け取り、冪等性キーの値が既に処理済みであるかチェックを行います。
 これまで処理したことの無い &amp;ldquo;冪等性キー&amp;rdquo; であれば、リソース作成処理を行い、処理済みの &amp;ldquo;冪等性キー&amp;rdquo; としてストレージに登録します。
 処理済みの &amp;ldquo;冪等性キー&amp;rdquo; であれば、リソース作成処理を行わずに終了します。
-このような実装にすることで、同じ &amp;ldquo;冪等性キー&amp;rdquo; で何度呼び出しても1つのリソースしか作成されなくなり、冪等であると言える状態を作ることができます。</description><dc:creator>ktzw</dc:creator><category>RESTfulAPI</category><category>設計</category><category>サーバーサイド</category></item></channel></rss>
+このような実装にすることで、同じ &amp;ldquo;冪等性キー&amp;rdquo; で何度呼び出しても1つのリソースしか作成されなくなり、冪等であると言える状態を作ることができます。</description><dc:creator>ktzw</dc:creator><media:content url="https://y-ktzw.comimages/card/idempotent-api.png" medium="image"><media:title type="html">meta image</media:title></media:content><category>RESTfulAPI</category><category>設計</category><category>サーバーサイド</category></item></channel></rss>
