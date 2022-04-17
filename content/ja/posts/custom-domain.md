@@ -7,6 +7,8 @@ tags:
   - ブログ作成
   - Xserver
   - HTTPS
+meta_image: images/card/custom-domain.png
+image: images/card/custom-domain.png
 ---
 
 ## はじめに
