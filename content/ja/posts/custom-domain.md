@@ -1,6 +1,6 @@
 ---
 title: "Xserver Domain で取得したドメインを使って GitHub Pages で HTTPS に対応したサイトを公開する方法"
-date: 2022-04-15T00:45:00+09:00
+date: 2022-04-17T21:30:00+09:00
 description: Xserver Domain を使ってドメインを取得し、GitHub Pages のブログにカスタムドメインを設定する方法を紹介します。また、 HTTPS に対応するために Xserver SSL を使用して Let's Encrypt の証明書を取得します。
 tags:
   - GitHub Pages
@@ -12,7 +12,7 @@ tags:
 ## はじめに
 ブログを公開する方法は様々ありますが、 GitHub Pages を使うことで無料で始めることができます。
 無料でブログを公開する場合、`{user_name}.github.io` といったサブドメインをブログのURLに使用することになります。HTTPSへの対応も自動で行うことができ大変便利なのですが、ひとつ問題があります。
-それは、Google AdSense での収益化ができない点です。Google AdSense はサブドメインでの申請はできないため、自分でドメインを取得してブログを公開しなければなりません。
+それは、Google AdSense での収益化ができない点です。Google AdSense はサブドメインでの申請はできないため、自分で取得したドメインを使ってブログを公開しなければなりません。
 この記事では Xserver Domain を使ってドメインを取得し、GitHub Pages のブログにカスタムドメインを設定する方法を紹介します。
 ちなみに、このブログも Xserver Domain で取得したドメインを使用して、GihHub Pages でサイトを公開しています。
 
