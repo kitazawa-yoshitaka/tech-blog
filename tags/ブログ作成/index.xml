@@ -15,4 +15,4 @@ Xserverではこれを無料で利用することができます。
 私は費用を抑えることを優先して考えたため、Xserver Domain を使用してドメインを取得することにしました。
 ドメイン取得から設定まで まずはドメインの取得を行います。
 その後、DNS や GitHub Pages の設定変更を行い、最後に HTTPS 通信に対応するための証明書作成を行います。
-面倒な部分もありますが、手順通りに設定をすることで独自ドメインでサイトを公開し、 HTTPS にも対応できるようになります。</description><dc:creator>ktzw</dc:creator><category>GitHub Pages</category><category>ブログ作成</category><category>Xserver</category><category>HTTPS</category></item></channel></rss>
+面倒な部分もありますが、手順通りに設定をすることで独自ドメインでサイトを公開し、 HTTPS にも対応できるようになります。</description><dc:creator>ktzw</dc:creator><media:content url="https://y-ktzw.comimages/card/custom-domain.png" medium="image"><media:title type="html">featured image</media:title></media:content><media:content url="https://y-ktzw.comimages/card/custom-domain.png" medium="image"><media:title type="html">meta image</media:title></media:content><category>GitHub Pages</category><category>ブログ作成</category><category>Xserver</category><category>HTTPS</category></item></channel></rss>
