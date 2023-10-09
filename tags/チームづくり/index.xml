@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>チームづくり on ktzwのエンジニアブログ</title><link>https://y-ktzw.com/tags/%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A5%E3%81%8F%E3%82%8A/</link><description>Recent content in チームづくり on ktzwのエンジニアブログ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><copyright>©2023, All Rights Reserved</copyright><lastBuildDate>Mon, 09 Oct 2023 16:10:00 +0900</lastBuildDate><atom:link href="https://y-ktzw.com/tags/%E3%83%81%E3%83%BC%E3%83%A0%E3%81%A5%E3%81%8F%E3%82%8A/index.xml" rel="self" type="application/rss+xml"/><item><title>権限設計表による意思決定権の明確化</title><link>https://y-ktzw.com/posts/role-design/</link><pubDate>Mon, 09 Oct 2023 16:10:00 +0900</pubDate><atom:modified>Mon, 09 Oct 2023 16:10:00 +0900</atom:modified><guid>https://y-ktzw.com/posts/role-design/</guid><description>はじめに 最近、チームで権限設計表を作成しましたので紹介します。
+私のチームは10人未満のプロダクトチームで、リーダーに依存せずに主体的に仕事を進められる「自走するチーム」を目指しています。
+自走するチームを目指す中で誰が意思決定権を持っているのか不明瞭だと、「誰の承認を取ればいいのかわからない」「自己判断で進行していたが上長の承認が必要だった」など意思決定による問題で業務が停滞したり手戻りが発生してしまうことがあります。
+これらの問題を最小限に抑えるために、私のチームでは権限設計表を作成して運用しています。
+なぜ権限設計表が必要なのか 組織の意思決定権を明確にすることで、誰の承認を取ればいいのかで迷うことがなくなり、業務効率化に寄与することができます。
+また、意思決定者が明確になっていることで、意思決定者に承認を求める際の心理的ハードルも下がるという効果もあります。
+作り方 業務に関係するロールを洗い出して表の列にします。
+次に意思決定が必要な業務を洗い出して表の行にします。このときにカテゴリー分けをしておくと後で見やすいと思います。
+ちなみに、業務の洗い出しは完璧である必要はありません。業務内容は状況によって変化するので足りないものがあれば都度見直しを行えば良いです。
+ロールと業務の洗い出しが終わったら意思決定権を持つ人をマークします。権限設計表の作成はこれだけです。
+チームの規模によると思いますが、1~3時間程度あれば十分完成できると思います。
+権限設計表のサンプル 業務 マネージャー チームリーダー テックリード チームメンバー KPI・KGI ● 案件スケジュール ● システムアーキテクチャの変更 ● 問い合わせに対する既存仕様の回答 ● 問い合わせに対する仕様変更の関わる回答 ● プルリクエストの承認 ● 運用方法 権限設計表を作成したら関係者全員と認識合わせを行います。</description><dc:creator>ktzw</dc:creator><media:content url="https://y-ktzw.comimages/card/role-design.png" medium="image"><media:title type="html">featured image</media:title></media:content><media:content url="https://y-ktzw.comimages/card/role-design.png" medium="image"><media:title type="html">meta image</media:title></media:content><category>チームづくり</category><category>業務効率化</category></item></channel></rss>
